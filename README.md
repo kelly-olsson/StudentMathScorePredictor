@@ -16,6 +16,15 @@ Columns include:
 - `reading score`: Score in the reading exam
 - `writing score`: Score in the writing exam
 
+## Data Visualization
+The `visualizations` folder contains scripts that perform a detailed visual analysis of the dataset:
+
+- `data_visualizations.py`: A script providing a variety of plots such as correlation heatmaps, box plots for outlier detection, distribution histograms for each feature, pair plots, and violin plots to explore the data deeply. This visual examination underpins the feature selection and model evaluation processes.
+
+- `StudentsPerformance.py`: This script presumably offers tailored visualizations specific to student performance metrics, complementing the overall analysis.
+
+Visual insights from these scripts support the feature selection and predictive modeling steps, offering an intuitive understanding of the data's structure and relationships.
+
 ## Key Techniques and Processes
 1. **Data Preprocessing**:
    - Conversion of string columns to numeric using `LabelEncoder`.
