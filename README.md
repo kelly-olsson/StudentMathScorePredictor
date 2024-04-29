@@ -1,4 +1,4 @@
-# Students Performance in Math Exams - Predictive Analysis
+# Student Performance in Math Exams - Predictive Analysis
 
 ## Introduction
 This repository showcases a comprehensive predictive analysis of student performance in math exams, utilizing advanced machine learning techniques for feature engineering, model development, and evaluation.
