@@ -1,68 +1,42 @@
 # Students Performance in Math Exams - Predictive Analysis
 
 ## Introduction
-This repository contains an analysis of the "Students Performance in Exams" dataset, focusing on predicting math scores. The analysis includes machine learning techniques for feature selection and evaluation of predictive algorithms.
+This repository showcases a comprehensive predictive analysis of student performance in math exams, utilizing advanced machine learning techniques for feature engineering, model development, and evaluation.
 
-## Dataset Overview
-The dataset includes student demographics and academic scores across various subjects: [Kaggle Dataset](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
+## Dataset
+The project uses the "Students Performance in Exams" dataset from Kaggle, which includes demographics and scores across various subjects. Key attributes include gender, race/ethnicity, parental education, lunch type, test preparation, and academic scores. The dataset is available [here](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams).
 
-Columns include: 
-- `gender`: Student's gender
-- `race/ethnicity`: Categorized race/ethnicity of the student
-- `parental level of education`: Highest education level obtained by the student's parents
-- `lunch`: Type of lunch received (standard or free/reduced)
-- `test preparation course`: Completion status of test preparation course
-- `math score`: Score in the math exam
-- `reading score`: Score in the reading exam
-- `writing score`: Score in the writing exam
+## Technical Overview
 
-## Data Visualization
-The `visualizations` folder contains scripts that perform a detailed visual analysis of the dataset:
+### Data Preprocessing
+- **Normalization and Encoding**: Applied `LabelEncoder` and standard scaling to transform categorical data into a machine-readable format.
+- **Outlier Management**: Identified and handled outliers using z-scores to ensure robust model performance.
 
-- `data_visualizations.py`: A script providing a variety of plots such as correlation heatmaps, box plots for outlier detection, distribution histograms for each feature, pair plots, and violin plots to explore the data deeply. This visual examination underpins the feature selection and model evaluation processes.
+### Feature Selection
+- **Statistical Tests & Recursive Feature Elimination**: Employed Chi-Square tests and RFE to determine significant predictors, enhancing model accuracy.
 
-- `StudentsPerformance.py`: This script presumably offers tailored visualizations specific to student performance metrics, complementing the overall analysis.
+### Model Development & Evaluation
+- **Ordinary Least Squares (OLS)**: Implemented with cross-validation to estimate model parameters and assess performance using RMSE, MAE, and R-squared metrics.
+- **Neural Networks**: Configured and optimized a neural network in Keras, employing techniques like early stopping to prevent overfitting.
+- **Ensemble Modeling**: Developed a stacked model that combines multiple base models to leverage their strengths and improve accuracy.
 
-Visual insights from these scripts support the feature selection and predictive modeling steps, offering an intuitive understanding of the data's structure and relationships.
-
-## Key Techniques and Processes
-1. **Data Preprocessing**:
-   - Conversion of string columns to numeric using `LabelEncoder`.
-   - Identification and handling of outliers based on z-scores.
-   - Imputation of missing values and data normalization.
-
-2. **Feature Selection**:
-   - Utilization of techniques like RFE, FFS, and Chi-Square Test to identify significant predictors for math scores.
-
-3. **Model Development**:
-   - **Ordinary Least Squares (OLS) Model**: Statistical approach for linear regression, including cross-validation and performance metrics (RMSE, MAE, R-squared).
-   - **Neural Network Model**: Developed using Keras with early stopping and model checkpointing, optimized through GridSearchCV.
-   - **Stacked Model**: Combination of various base models to improve prediction accuracy. 
-
-4. **Hyperparameter Tuning**:
-   - Exhaustive search over specified parameter values for models like RandomForestRegressor, AdaBoostRegressor, DecisionTreeRegressor, etc.
+### Hyperparameter Tuning
+- **GridSearchCV**: Performed an exhaustive search over specified model parameters to find the most optimal settings, particularly for complex models like RandomForest and AdaBoost.
 
 ## Repository Structure
-- `DS_Exams_Report.pdf`: Detailed report of the exploratory data analysis.
-- `Production.py`: Python script for production-level model predictions.
-- `TrainingScript.py`: Python script used for training the models.
-- `train.csv`: Training dataset used for model development.
-- `test.csv`: Test dataset used for evaluating the model.
-- `BinaryFolder/`: Directory containing serialized models and scaler objects.
-  - `base_model1.pkl` to `base_model7.pkl`: Serialized base models for the stacked model.
-  - `m1_ols_model`: Serialized Ordinary Least Squares (OLS) model.
-  - `m2_nn_model.h5`: Serialized Neural Network model in HDF5 format.
-  - `stacked_model`: Serialized stacked model combining various base models.
-  - `sc_x.pkl`: Serialized scaler object for data normalization.
+- `DS_Exams_Report.pdf`: A detailed analytical report.
+- `Production.py`: Script for deploying models into production.
+- `TrainingScript.py`: Contains the complete workflow for training models.
+- `data/`: Includes `train.csv` for training and `test.csv` for model validation.
+- `models/`: Contains serialized models (`*.pkl`, `*.h5`) for production use.
+- `visualizations/`: Contains code for visualizations employed in Exploratory Data Analysis in `DS_Exams_Report.pdf`
 
-## Objectives
-The goal is to utilize statistical and machine learning methods to predict math scores based on various student attributes.
-
-## Key Findings
-- Significant predictors include reading and writing scores, gender, and test preparation course status.
-- The stacked model showed the best performance in predicting math scores.
+## Highlights
+- **Predictive Power**: Demonstrated strong predictive performance, especially with the stacked model approach.
+- **Insights**: Identified critical predictors impacting math scores, providing actionable insights into student performance.
 
 ## Conclusion
-This project demonstrates the application of feature selection, model tuning, and ensemble methods in predictive modeling, crucial for roles in data analysis and data quality assurance.
+This project illustrates the application of sophisticated statistical techniques and machine learning algorithms to predict educational outcomes, showcasing skills crucial for advanced data analysis roles.
 
-Dataset Source: [Kaggle Dataset](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
+## Acknowledgements
+Data provided by [Kaggle](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams).
